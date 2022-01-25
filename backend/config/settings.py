@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-y&s%p-)fb7b=2e=na$1zu)3@q)2_6sktb3*der3t_a31+!8@cw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tiltdb.herokuapp.com']
 
 
 # Application definition
