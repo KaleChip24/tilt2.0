@@ -6,8 +6,8 @@ from tiltdb import views
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 router = routers.DefaultRouter()
-router.register('movies', views.VenueViewSet)
-router.register('directors', views.MachineViewSet)
+router.register('venues', views.VenueViewSet)
+router.register('machines', views.MachineViewSet)
 
 
 urlpatterns = [
