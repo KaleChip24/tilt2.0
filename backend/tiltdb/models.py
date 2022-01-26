@@ -16,7 +16,7 @@ class Machine(models.Model):
     price = models.IntegerField()
     comments = models.CharField(max_length=256)
     venue = models.ForeignKey(
-        Venue, on_delete=models.CASCADE, related_name='tilt')
+        Venue, on_delete=models.CASCADE, related_name='machine')
 
     def __str__(self):
         return self.name

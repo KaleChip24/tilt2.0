@@ -4,7 +4,7 @@ from .models import Venue, Machine
 class VenueSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
     model = Venue
-    fields = ['name', 'address', 'city', 'state']
+    fields = ['name', 'address', 'city', 'state', 'machine']
     
 
 class MachineSerializer(serializers.HyperlinkedModelSerializer):
