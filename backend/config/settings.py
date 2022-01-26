@@ -37,6 +37,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['tilt2.herokuapp.com', 'localhost']
 
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
+
 
 # Application definition
 
@@ -50,6 +52,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'tiltdb',
     'accounts',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
