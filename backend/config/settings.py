@@ -34,7 +34,7 @@ else:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tiltdb.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['tilt2.herokuapp.com', 'localhost']
 
 
 # Application definition
