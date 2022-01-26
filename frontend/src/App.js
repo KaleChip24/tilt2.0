@@ -5,25 +5,25 @@ import Home from "./screens/Home/Home.jsx";
 import { verifyUser } from "./services/users";
 
 function App() {
-  const [user, setUser] = useStatue(null);
+  // const [user, setUser] = useStatue(null);
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const user = await verifyUser();
-      user ? setUser(user) : setUser(null);
-    };
-    fetchUser();
-  }, []);
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     const user = await verifyUser();
+  //     user ? setUser(user) : setUser(null);
+  //   };
+  //   fetchUser();
+  // }, []);
 
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<Home user={user} />} />
+        <Route path='/' element={<Home />} />
         <Route path='/signUp' element={null} />
         <Route path='/signIn' element={null} />
         <Route path='/signOut' element={null} />
         <Route path='/venue' element={null} />
-        <Route path='/add-venue'
+        {/* <Route path='/add-venue'
           element={
             user ? (
               <VenueCreate user={user} />
@@ -33,10 +33,10 @@ function App() {
           }
         />
         {/*end of add-venue */}
-        <Route
+        {/* <Route
           path='/venues/:id'
           element={<VenueDetail user={user} />}
-        />
+        />  */}
       </Routes>
 
     </div>
