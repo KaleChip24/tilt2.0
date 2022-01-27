@@ -4,10 +4,10 @@ from .models import Venue, Machine
 class VenueSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
     model = Venue
-    fields = ['name', 'address', 'city', 'state', 'machine']
+    fields = ['id','name', 'address', 'city', 'state', 'machine']
     
 
 class MachineSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
     model = Machine
-    fields = ['name', 'price', 'comments']
+    fields = ['id','name', 'price', 'comments']
