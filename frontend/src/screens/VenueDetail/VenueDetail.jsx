@@ -24,8 +24,7 @@ const VenueDetail = () => {
 
   return (
     <Layout>
-
-      <div>
+      <div className="venue-detail">
 
       </div>
     </Layout>

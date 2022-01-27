@@ -3,6 +3,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Home from "./screens/Home/Home.jsx";
 import { verifyUser } from "./services/users";
+import VenueDetail from "./screens/VenueDetail/VenueDetail"
 
 function App() {
   // const [user, setUser] = useStatue(null);
@@ -33,10 +34,10 @@ function App() {
           }
         />
         {/*end of add-venue */}
-        {/* <Route
+        <Route
           path='/venues/:id'
-          element={<VenueDetail user={user} />}
-        />  */}
+          element={<VenueDetail />}
+        />
       </Routes>
 
     </div>

@@ -38,6 +38,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['tilt2.herokuapp.com', 'localhost']
 
 CORS_ALLOWED_ORIGINS = [
+  "http://tilt2.herokuapp.com",
   "http://localhost:3000",
   "http://localhost:8000",
   "http://localhost:8001",
