@@ -7,7 +7,7 @@ class Venue(models.Model):
     city = models.CharField(max_length=128)
     state = models.CharField(max_length=128)
 
-    def __ste__(self):
+    def __str__(self):
         return self.name
 
 

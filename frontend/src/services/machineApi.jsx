@@ -2,7 +2,7 @@ import api from "./apiConfig";
 
 export const getMachines = async () => {
   try {
-    const response = await api.get("/machines");
+    const response = await api.get("/machines/");
     return response.data;
   } catch (error) {
     throw error;
@@ -20,7 +20,7 @@ export const getMachine = async (id) => {
 
 export const crateMachine = async (machine) => {
   try {
-    const response = await api.post('/machines', machine);
+    const response = await api.post('/machines/', machine);
     return response.data;
   } catch (error) {
     throw error;
