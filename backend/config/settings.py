@@ -43,6 +43,12 @@ CORS_ALLOWED_ORIGINS = [
   "http://localhost:8001",
   ]
 
+CORS_ORIGIN_WHITELIST = [
+  'http://localhost:3000',
+  "http://localhost:8000",
+  "http://localhost:8001",
+  ]
+
 CORS_ALLOWED_ORIGIN_REGEXES = [
 r"^https://\w+\.domain\.com$",
 ]

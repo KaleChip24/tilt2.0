@@ -4,6 +4,7 @@ export const getVenues = async () => {
   try {
     const response = await api.get("/venues");
     return response.data;
+
   } catch (error) {
     throw error;
   }
