@@ -1,3 +1,4 @@
+import email
 from django.shortcuts import render
 
 from django.shortcuts import render, redirect
@@ -30,4 +31,26 @@ class LoginView(generics.ListCreateAPIView):
             serializer.is_valid()
             return Response(serializer.data)
         return Response(status=status.HTTP_401_UNAUTHORIZED)
+      
+
+class RegisterUserView(generics.ListCreateAPIView):
+  permission_classes = (permissions.AllowAny,)
+  serializer_class = UserSerializer
+  queryset = User.objects.all()
+  
+  def post(self, request, *args, **kwargs):
+    username = request.data.get('username', "")
+    password =  request('password', "")
+    email = request.data.get('email', "")
+    if not username or not password or not email:
+      return Response(
+        data={
+          "message": "username, password and email are required to create a Tilt user"
+        },
+        status=status.HTTP_400_BAD_REQUEST
+      )
+    new_user = User.objects.create_user(
+      username=username, password=password, email=email
+    )
+    return Response(status=status.HTTP_201_CREATED)
 
