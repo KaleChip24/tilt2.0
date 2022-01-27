@@ -21,7 +21,7 @@ const Venues = (props) => {
     // <Layout >
     <div className="venues-container">
       <div className="venues">
-        {venues.map((venue, index) => {
+        {venues.map((venue) => {
           return (
             <>
               {venue.name}

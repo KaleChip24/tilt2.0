@@ -2,7 +2,8 @@ import api from "./apiConfig";
 
 export const getVenues = async () => {
   try {
-    const response = await api.get("/venues");
+    const response = await api.get("/venues/");
+    console.log(response.data)
     return response.data;
 
   } catch (error) {
