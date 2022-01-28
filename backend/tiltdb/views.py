@@ -6,11 +6,11 @@ from .models import Venue, Machine
 class VenueViewSet(viewsets.ModelViewSet):
   queryset = Venue.objects.all()
   serializer_class = VenueSerializer
-  permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+  permission_classes = (permissions.AllowAny,)
   
 class MachineViewSet(viewsets.ModelViewSet):
   queryset = Machine.objects.all()
   serializer_class = MachineSerializer
-  permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+  permission_classes = (permissions.AllowAny,)
   
   
