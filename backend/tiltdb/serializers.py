@@ -15,7 +15,7 @@ class VenueSerializer(serializers.HyperlinkedModelSerializer):
     model = Venue
     fields = ['id','name', 'address', 'city', 'state', 'machine']
     
-  def create(self, validate_data):
+  def create(self, validated_data):
     machine_data = validated_data.pop('machine')
     venue = Venue.objects.create(**validated_data)
     for machine_data in machine_data:
