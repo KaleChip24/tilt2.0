@@ -35,12 +35,14 @@ const VenueDetail = (props) => {
         <h1 className="venue-title">{venue.name}</h1>
         <p className="venue-address">{venue.address}</p>
         <p className="venue-city-state">{venue.city} {venue.state}</p>
+        <button className="edit-btn">edit</button>
+        <button className="delete-btn">delete</button>
       </div>
       <h1 className="machines-block">machines</h1>
       <div className="machines">
-        {venue.machine.map((machine, index) => {
+        {venue.machines.map((machine, id) => {
           return (
-            <div className="machine-cards">
+            <div className="machine-cards" key={id}>
               <h3>{machine.name}</h3>
               <p>{machine.price}</p>
               <p>{machine.comments}</p>

@@ -10,7 +10,7 @@ class MachineSerializer(serializers.HyperlinkedModelSerializer):
     
     
 class VenueSerializer(serializers.HyperlinkedModelSerializer):
-  machine = MachineSerializer(many=True)
+  machines = MachineSerializer(many=True)
   class Meta:
     model = Venue
     fields = ['id','name', 'address', 'city', 'state', 'machines']

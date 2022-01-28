@@ -20,24 +20,14 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/add-venue' element={null} />
+        <Route path='/edit-venue' element={null} />
+        <Route path='/add-machine' element={null} />
+        <Route path='/edit-machine' element={null} />
         <Route path='/signUp' element={null} />
         <Route path='/signIn' element={null} />
         <Route path='/signOut' element={null} />
-        {/* <Route path='/venue' element={null} /> */}
-        {/* <Route path='/add-venue'
-          element={
-            user ? (
-              <VenueCreate user={user} />
-            ) : (
-              <Navigate to='/add-product' />
-            )
-          }
-        />
-        {/*end of add-venue */}
-        <Route
-          path='/venues/:id'
-          element={<VenueDetail />}
-        />
+        <Route path='/venues/:id' element={<VenueDetail />} />
       </Routes>
 
     </div>
