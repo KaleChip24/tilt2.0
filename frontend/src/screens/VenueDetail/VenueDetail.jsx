@@ -31,10 +31,10 @@ const VenueDetail = (props) => {
     fetchMachines()
   }, [])
 
-
   if (!isLoaded) {
     return <h1>You Tilted....Waiting for ball to drop</h1>
   }
+
 
   return (
     <Layout>
@@ -43,6 +43,13 @@ const VenueDetail = (props) => {
         <p>{venue.address}</p>
         <p>{venue.city} {venue.state}</p>
         <div>{venue.machine}</div>
+        {/* <div>
+          {machines.map((venue.name == machine.venue) => {
+          return(
+          <div>{machine.name}</div>
+          )
+          })}
+        </div> */}
       </div>
     </Layout>
   );
