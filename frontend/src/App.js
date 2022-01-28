@@ -23,7 +23,7 @@ function App() {
         <Route path='/signUp' element={null} />
         <Route path='/signIn' element={null} />
         <Route path='/signOut' element={null} />
-        <Route path='/venue' element={null} />
+        {/* <Route path='/venue' element={null} /> */}
         {/* <Route path='/add-venue'
           element={
             user ? (

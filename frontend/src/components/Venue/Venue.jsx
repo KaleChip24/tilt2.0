@@ -8,8 +8,10 @@ const Venue = (props) => {
           <h2>{props.name}</h2>
         </div>
       </Link>
-      <h4>{props.city}</h4>
-      <h4>{props.state}</h4>
+      <span>
+        <h4>{props.city}</h4>
+        <h4>{props.state}</h4>
+      </span>
 
     </div>
   );

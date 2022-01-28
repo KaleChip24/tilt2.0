@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import Venue, Machine
 
 class VenueSerializer(serializers.HyperlinkedModelSerializer):
+  machine = serializers.StringRelatedField(many=True)
   class Meta:
     model = Venue
     fields = ['id','name', 'address', 'city', 'state', 'machine']

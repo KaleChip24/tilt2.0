@@ -28,6 +28,7 @@ const Venues = (props) => {
               name={venue.name}
               city={venue.city}
               state={venue.state}
+              id={venue.id}
               key={index}
             />
           )
