@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
 import { getVenue } from "../../services/venueApi";
+import { getMachines } from "../../services/machineApi";
 import { useParams } from "react-router-dom";
-import Machines from "../../components/Machines/Machines"
+// import Machines from "../../components/Machines/Machines"
 
 
 
 const VenueDetail = (props) => {
   const [venue, setVenue] = useState([]);
+  const [machines, setMachines] = useState([]);
   const [isLoaded, setLoaded] = useState(false);
   const { id } = useParams();
 
@@ -15,11 +17,20 @@ const VenueDetail = (props) => {
     const fetchVenue = async () => {
       const venue = await getVenue(id);
       setVenue(venue);
-      console.log(venue)
       setLoaded(true);
     };
     fetchVenue()
   }, [id]);
+
+  useEffect(() => {
+    const fetchMachines = async () => {
+      const allMachines = await getMachines();
+      console.log(allMachines)
+      setMachines(allMachines);
+    }
+    fetchMachines()
+  }, [])
+
 
   if (!isLoaded) {
     return <h1>You Tilted....Waiting for ball to drop</h1>
@@ -33,7 +44,6 @@ const VenueDetail = (props) => {
         <p>{venue.city} {venue.state}</p>
         <div>{venue.machine}</div>
       </div>
-      {/* <Machines /> */}
     </Layout>
   );
 };
