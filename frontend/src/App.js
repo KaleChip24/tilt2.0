@@ -1,22 +1,27 @@
 import './App.css';
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Home from "./screens/Home/Home.jsx";
 import { verifyUser } from "./services/users";
 import VenueDetail from "./screens/VenueDetail/VenueDetail"
 import VenueCreate from './screens/VenueCreate/VenueCreate';
 import VenueEdit from './screens/VenueEdit/VenueEdit';
+import SignIn from './screens/SignIn/SignIn';
 
 function App() {
-  // const [user, setUser] = useStatue(null);
+  const [signedIn, setSignedIn] = useState(false);
+  const [toggle, settoggle] = useState(false);
 
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     const user = await verifyUser();
-  //     user ? setUser(user) : setUser(null);
-  //   };
-  //   fetchUser();
-  // }, []);
+  const nav = useNavigate()
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const res = await verifyUser();
+      res ? setSignedIn(true) : setSignedIn(false);
+    };
+    fetchUser();
+  }, [])
+
 
   return (
     <div className="App">
@@ -25,10 +30,10 @@ function App() {
         <Route path='/venues/add-venue' element={<VenueCreate />} />
         <Route path='/venues/:id' element={<VenueDetail />} />
         <Route path='/venues/:id/edit' element={<VenueEdit />} />
-        <Route path='/add-machine' element={null} />
-        <Route path='/machine/:id/edit' element={null} />
+        <Route path='/machines/add-machine' element={null} />
+        <Route path='/machines/:id/edit' element={null} />
         <Route path='/signUp' element={null} />
-        <Route path='/signIn' element={null} />
+        <Route path='/signIn' element={<SignIn setSignedIn={setSignedIn} />} />
         <Route path='/signOut' element={null} />
       </Routes>
 

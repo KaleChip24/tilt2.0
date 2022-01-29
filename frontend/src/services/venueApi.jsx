@@ -10,7 +10,7 @@ export const getVenues = async () => {
   }
 };
 
-export const getVenue = async (id) => {
+export const getVenue = async id => {
   try {
     const response = await api.get(`/venues/${id}`);
     return response.data;
@@ -38,7 +38,7 @@ export const updateVenue = async (id, venue) => {
   }
 };
 
-export const deleteVenue = async (id) => {
+export const deleteVenue = async id => {
   try {
     const response = await api.delete(`/venues/${id}`);
     return response.data;

@@ -35,7 +35,7 @@ const VenueEdit = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     await updateVenue(id, venue)
-    navigate(`/venue/${id}`)
+    navigate(`/venues/${id}`)
   }
 
   return (
@@ -45,7 +45,6 @@ const VenueEdit = () => {
         <h2 className="edit-venue-header">Edit Venue</h2>
         <form className="edit-form" onSubmit={handleSubmit}>
           <div className="edit-form-inputs">
-            <title>name</title>
             <input
               className='input-name'
               placeholder='Name'
@@ -53,7 +52,6 @@ const VenueEdit = () => {
               name='name'
               onChange={handleChange}
             />
-            <title>address</title>
             <input
               className='input-address'
               placeholder='address'
@@ -61,7 +59,6 @@ const VenueEdit = () => {
               name='address'
               onChange={handleChange}
             />
-            <title>city</title>
             <input
               className='input-city'
               placeholder='city'
@@ -69,7 +66,6 @@ const VenueEdit = () => {
               name='city'
               onChange={handleChange}
             />
-            <title>state</title>
             <input
               className='input-state'
               placeholder='state'

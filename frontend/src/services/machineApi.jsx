@@ -9,7 +9,7 @@ export const getMachines = async () => {
   }
 };
 
-export const getMachine = async (id) => {
+export const getMachine = async id => {
   try {
     const response = await api.get(`/machines/${id}`);
     return response.data;
@@ -18,7 +18,7 @@ export const getMachine = async (id) => {
   }
 };
 
-export const crateMachine = async (machine) => {
+export const createMachine = async machine => {
   try {
     const response = await api.post('/machines/', machine);
     return response.data;
@@ -36,7 +36,7 @@ export const updateMachine = async (id, machine) => {
   }
 };
 
-export const deleteMachine = async (id) => {
+export const deleteMachine = async id => {
   try {
     const response = await api.delete(`/machines/${id}`);
     return response.data;
