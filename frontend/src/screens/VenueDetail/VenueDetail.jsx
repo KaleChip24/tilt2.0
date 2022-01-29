@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
 import { getVenue } from "../../services/venueApi";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./VenueDetail.css"
 
 
@@ -35,8 +35,8 @@ const VenueDetail = (props) => {
         <h1 className="venue-title">{venue.name}</h1>
         <p className="venue-address">{venue.address}</p>
         <p className="venue-city-state">{venue.city} {venue.state}</p>
-        <button className="edit-btn">edit</button>
-        <button className="delete-btn">delete</button>
+        <Link className="venue-edit-link" to={`/venues/${id}/edit`}>edit</Link>
+        <button className="venue-delete-btn">delete</button>
       </div>
       <h1 className="machines-block">machines</h1>
       <div className="machines">
@@ -46,6 +46,8 @@ const VenueDetail = (props) => {
               <h3>{machine.name}</h3>
               <p>{machine.price}</p>
               <p>{machine.comments}</p>
+              <Link className="machine-edit-link" to={`/machines/${id}/edit`}>edit</Link>
+              <button className="machine-delete-btn">delete</button>
             </div>
           );
         })}

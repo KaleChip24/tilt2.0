@@ -5,6 +5,7 @@ import Home from "./screens/Home/Home.jsx";
 import { verifyUser } from "./services/users";
 import VenueDetail from "./screens/VenueDetail/VenueDetail"
 import VenueCreate from './screens/VenueCreate/VenueCreate';
+import VenueEdit from './screens/VenueEdit/VenueEdit';
 
 function App() {
   // const [user, setUser] = useStatue(null);
@@ -23,7 +24,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/venues/add-venue' element={<VenueCreate />} />
         <Route path='/venues/:id' element={<VenueDetail />} />
-        <Route path='/venues/:id/edit' element={<VenueDetail />} />
+        <Route path='/venues/:id/edit' element={<VenueEdit />} />
         <Route path='/add-machine' element={null} />
         <Route path='/machine/:id/edit' element={null} />
         <Route path='/signUp' element={null} />

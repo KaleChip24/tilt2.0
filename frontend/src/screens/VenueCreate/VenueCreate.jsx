@@ -22,7 +22,7 @@ const VenueCreate = (props) => {
     })
   }
 
-  const handleSubmint = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     await createVenue(createdVenue);
     navigate('/');
@@ -31,8 +31,8 @@ const VenueCreate = (props) => {
 
   return (
     <div className="venue-form">
-      <h2 className="add-venue-deader">Add Venue</h2>
-      <form className="create-form" onSubmit={handleSubmint}>
+      <h2 className="add-venue-header">Add Venue</h2>
+      <form className="create-form" onSubmit={handleSubmit}>
         <div className="form-inputs">
           <input
             className='input-name'
