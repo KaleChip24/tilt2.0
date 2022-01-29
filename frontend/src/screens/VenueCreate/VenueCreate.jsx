@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import { createVenue } from "../../services/venueApi"
+import './VenueCreate.css'
 
 const VenueCreate = (props) => {
   let navigate = useNavigate();
@@ -10,6 +11,7 @@ const VenueCreate = (props) => {
     address: '',
     city: '',
     state: '',
+    machines: [],
   });
 
   const handleChange = (event) => {
@@ -29,9 +31,9 @@ const VenueCreate = (props) => {
 
   return (
     <div className="venue-form">
+      <h2 className="add-venue-deader">Add Venue</h2>
       <form className="create-form" onSubmit={handleSubmint}>
         <div className="form-inputs">
-          <h2 className="add-venue-deader">Add Venue</h2>
           <input
             className='input-name'
             placeholder='Name'

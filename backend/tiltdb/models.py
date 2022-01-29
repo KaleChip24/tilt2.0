@@ -6,7 +6,6 @@ class Venue(models.Model):
     address = models.CharField(max_length=256)
     city = models.CharField(max_length=128)
     state = models.CharField(max_length=128)
-    machine = models.CharField(max_length=258, default='blank', null=True)
 
     def __str__(self):
         return self.name

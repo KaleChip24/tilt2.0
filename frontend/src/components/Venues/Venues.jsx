@@ -12,6 +12,7 @@ const Venues = (props) => {
   useEffect(() => {
     const fetchVenues = async () => {
       const allVenues = await getVenues();
+      console.log(allVenues)
       setVenues(allVenues);
     };
     fetchVenues();

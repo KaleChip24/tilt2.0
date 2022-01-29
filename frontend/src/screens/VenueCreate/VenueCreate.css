@@ -1,0 +1,13 @@
+.venue-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.create-form{
+  display: flex;
+  flex-direction: column
+}
+.fomr-inputs{
+  display: flex;
+  flex-direction: column;
+}
