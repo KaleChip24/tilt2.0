@@ -3,7 +3,6 @@ from .models import Venue, Machine
     
 
 class MachineSerializer(serializers.ModelSerializer):
-  venue = serializers.StringRelatedField()
   class Meta:
     model = Machine
     fields = ['id','name', 'price', 'comments', 'venue']

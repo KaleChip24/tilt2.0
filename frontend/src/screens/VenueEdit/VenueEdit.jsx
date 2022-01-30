@@ -35,7 +35,7 @@ const VenueEdit = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     await updateVenue(id, venue)
-    navigate(`/venues/${id}`)
+    navigate(`/venues/${id}/`)
   }
 
   return (

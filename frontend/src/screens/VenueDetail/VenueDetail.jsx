@@ -6,7 +6,6 @@ import "./VenueDetail.css"
 
 
 
-
 const VenueDetail = (props) => {
   const [venue, setVenue] = useState([]);
   const [isLoaded, setLoaded] = useState(false);
@@ -43,9 +42,9 @@ const VenueDetail = (props) => {
         </div>
         <h1 className="machines-block">machines</h1>
         <div className="machines">
-          {venue.machines.map((machine, id) => {
+          {venue.machines.map((machine, index) => {
             return (
-              <div className="machine-cards" key={id}>
+              <div className="machine-cards" key={index}>
                 <h3 className="machine-name">{machine.name}</h3>
                 <h4 className="machine-price">{`cost per play: $${machine.price}`}</h4>
                 <p className="machine-comments">{machine.comments}</p>

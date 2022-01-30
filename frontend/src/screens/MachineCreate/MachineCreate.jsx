@@ -1,10 +1,13 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import { createMachine } from "../../services/machineApi"
+import { getVenues } from "../../services/venueApi"
 import './MachineCreate.css'
 
 const MachineCreate = (props) => {
   let navigate = useNavigate();
+
+  const [venues, setVenues] = useState([])
 
   const [machines, setMachines] = useState({
     name: '',
@@ -13,7 +16,13 @@ const MachineCreate = (props) => {
     venue: '',
   });
 
-
+  useEffect(() => {
+    const fetchVenues = async () => {
+      const venues = await getVenues();
+      setVenues(venues)
+    };
+    fetchVenues()
+  }, [])
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -25,14 +34,14 @@ const MachineCreate = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await createMachine(setMachines);
+    await createMachine(machines);
     navigate('/');
   }
 
 
   return (
-    <div className="venue-form">
-      <h2 className="add-venue-header">Add Venue</h2>
+    <div className="machine-form">
+      <h2 className="add-machine-header">Add Machine</h2>
       <form className="create-form" onSubmit={handleSubmit}>
         <div className="form-inputs">
           <input
@@ -54,17 +63,25 @@ const MachineCreate = (props) => {
             placeholder='comments'
             value={props.comments}
             name='comments'
-            row={5}
+            rows={10}
             onChange={handleChange}
           />
           <select
             name='venue'
-            value={props.venue}
-
-          />
+            value={venues.id}
+            onChange={handleChange}
+            options={[venues.name]}
+          >
+            <option>Venue</option>
+            {venues.map((venue) => {
+              return (
+                <option key={venue.id} value={venue.id}>{venue.name}</option>
+              )
+            })}
+          </select>
         </div>
         <button
-          className="add-venue-btn"
+          className="add-machine-btn"
           type='submit'>Submit</button>
         <Link to={`/`}>
           <button id='back-redirect-button'>Back</button>

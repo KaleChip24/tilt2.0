@@ -45,7 +45,7 @@ export const changePassword = async (passwords, user) => {
 export const verifyUser = async () => {
   const refresh = localStorage.getItem("refresh");
   if (refresh) {
-    const res = await api.get("/verify/", { refresh });
+    const res = await api.post("/refresh-token/", { refresh });
     localStorage.setItem("token", res.data.access)
     return res;
   }

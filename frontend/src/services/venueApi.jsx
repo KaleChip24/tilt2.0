@@ -22,7 +22,6 @@ export const getVenue = async id => {
 export const createVenue = async venue => {
   try {
     const response = await api.post('/venues/', venue);
-    console.log(response.data)
     return response.data;
   } catch (error) {
     throw error;
