@@ -49,7 +49,7 @@ const VenueDetail = (props) => {
                 <h4 className="machine-price">{`cost per play: $${machine.price}`}</h4>
                 <p className="machine-comments">{machine.comments}</p>
                 <div className="machine-btn-container">
-                  <Link className="machine-edit-link" to={`/machines/${id}/edit`}>edit</Link>
+                  <Link className="machine-edit-link" to={`/machines/${machine.id}/edit`}>edit</Link>
                   <button className="machine-delete-btn">delete</button>
                 </div>
               </div>
