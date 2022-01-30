@@ -26,31 +26,37 @@ const VenueDetail = (props) => {
     return <h1>You Tilted....Waiting for ball to drop</h1>
   }
 
-  // const [name, address, city, state, machine]
-
 
   return (
     <Layout>
-      <div className="venue-detail">
-        <h1 className="venue-title">{venue.name}</h1>
-        <p className="venue-address">{venue.address}</p>
-        <p className="venue-city-state">{venue.city} {venue.state}</p>
-        <Link className="venue-edit-link" to={`/venues/${id}/edit`}>edit</Link>
-        <button className="venue-delete-btn">delete</button>
-      </div>
-      <h1 className="machines-block">machines</h1>
-      <div className="machines">
-        {venue.machines.map((machine, id) => {
-          return (
-            <div className="machine-cards" key={id}>
-              <h3>{machine.name}</h3>
-              <p>{machine.price}</p>
-              <p>{machine.comments}</p>
-              <Link className="machine-edit-link" to={`/machines/${id}/edit`}>edit</Link>
-              <button className="machine-delete-btn">delete</button>
-            </div>
-          );
-        })}
+      <div className="venue-details-wrap">
+        <div className="venue-detail">
+          <div className="venue-location">
+            <h1 className="venue-title">{venue.name}</h1>
+            <p className="venue-address">{venue.address}</p>
+            <p className="venue-city-state">{venue.city} {venue.state}</p>
+          </div>
+          <div className="venue-btn-container">
+            <Link className="venue-edit-link" to={`/venues/${id}/edit`}>edit</Link>
+            <button className="venue-delete-btn">delete</button>
+          </div>
+        </div>
+        <h1 className="machines-block">machines</h1>
+        <div className="machines">
+          {venue.machines.map((machine, id) => {
+            return (
+              <div className="machine-cards" key={id}>
+                <h3 className="machine-name">{machine.name}</h3>
+                <h4 className="machine-price">{`cost per play: $${machine.price}`}</h4>
+                <p className="machine-comments">{machine.comments}</p>
+                <div className="machine-btn-container">
+                  <Link className="machine-edit-link" to={`/machines/${id}/edit`}>edit</Link>
+                  <button className="machine-delete-btn">delete</button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </Layout>
   );

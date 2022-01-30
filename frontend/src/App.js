@@ -7,6 +7,7 @@ import VenueDetail from "./screens/VenueDetail/VenueDetail"
 import VenueCreate from './screens/VenueCreate/VenueCreate';
 import VenueEdit from './screens/VenueEdit/VenueEdit';
 import SignIn from './screens/SignIn/SignIn';
+import MachineCreate from './screens/MachineCreate/MachineCreate';
 
 function App() {
   const [signedIn, setSignedIn] = useState(false);
@@ -30,9 +31,9 @@ function App() {
         <Route path='/venues/add-venue' element={<VenueCreate />} />
         <Route path='/venues/:id' element={<VenueDetail />} />
         <Route path='/venues/:id/edit' element={<VenueEdit />} />
-        <Route path='/machines/add-machine' element={null} />
+        <Route path='/machines/add-machine' element={<MachineCreate />} />
         <Route path='/machines/:id/edit' element={null} />
-        <Route path='/signUp' element={null} />
+        {/* <Route path='/signUp' element={null} /> */}
         <Route path='/signIn' element={<SignIn setSignedIn={setSignedIn} />} />
         <Route path='/signOut' element={null} />
       </Routes>
