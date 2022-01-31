@@ -44,10 +44,14 @@ const MachineCreate = (props) => {
     <Layout>
       <div className="machine-form">
         <h2 className="add-machine-header">Add Machine</h2>
+        <div className="left-part">
+          <img className='pinball-icon' src="https://res.cloudinary.com/dv2buktns/image/upload/v1643644194/pbm_ddiwyd.png" alt='pinball machine' />
+        </div>
         <form className="create-form" onSubmit={handleSubmit}>
           <div className="form-inputs">
             <input
               className='input-name'
+              type='text'
               placeholder='Name'
               value={props.name}
               name='name'
@@ -63,6 +67,7 @@ const MachineCreate = (props) => {
             <input
               className='input-comments'
               placeholder='comments'
+              type='textarea'
               value={props.comments}
               name='comments'
               rows={10}

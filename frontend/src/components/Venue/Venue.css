@@ -1,7 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,200&display=swap');
+
 .venue-cards{
-  border: 1px solid #000000;
+  border: 1px solid;
+  border-radius: 10px;
+  width: 300px;
+  height: 100px;
 }
 
 .venue-card-name{
   text-decoration: none;
+  margin: 0 auto;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
 }
+
+a{
+  text-decoration: none;
+  color: black;
+}
+

@@ -25,13 +25,15 @@ const Venues = (props) => {
       <div className="venues">
         {venues.map((venue, index) => {
           return (
-            <Venue
-              name={venue.name}
-              city={venue.city}
-              state={venue.state}
-              id={venue.id}
-              key={index}
-            />
+            <div className="venue-box">
+              <Venue
+                name={venue.name}
+                city={venue.city}
+                state={venue.state}
+                id={venue.id}
+                key={index}
+              />
+            </div>
           )
         })}
 
