@@ -35,10 +35,11 @@ else:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tilt2.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['tilted2.netlify.app','tilt2.herokuapp.com', 'localhost']
 
 CORS_ALLOWED_ORIGINS = [
   "https://tilt2.herokuapp.com",
+  "https://tilted2.netlify.app",
   "http://localhost:3000",
   "http://localhost:8000",
   "http://localhost:8001",
