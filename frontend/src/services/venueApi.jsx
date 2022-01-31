@@ -1,5 +1,11 @@
 import api from "./apiConfig";
 
+const getToken = () => {
+  return new Promise((resolve) => {
+    resolve(`Bearer ${localStorage.getItem("token") || null}`);
+  });
+};
+
 export const getVenues = async () => {
   try {
     const response = await api.get("/venues/");
@@ -19,9 +25,18 @@ export const getVenue = async id => {
   }
 };
 
+
 export const createVenue = async venue => {
   try {
-    const response = await api.post('/venues/', venue);
+    const token = await getToken();
+
+    const headers = {
+      headers: {
+        Authorization: token
+      },
+    };
+
+    const response = await api.post('/venues/', venue, headers);
     return response.data;
   } catch (error) {
     throw error;
@@ -30,7 +45,13 @@ export const createVenue = async venue => {
 
 export const updateVenue = async (id, venue) => {
   try {
-    const response = await api.put(`/venues/${id}/`, venue);
+    const token = await getToken();
+    const headers = {
+      headers: {
+        Authorization: token
+      },
+    };
+    const response = await api.put(`/venues/${id}/`, venue, headers);
     return response.data;
   } catch (error) {
     throw error;
@@ -39,7 +60,13 @@ export const updateVenue = async (id, venue) => {
 
 export const deleteVenue = async id => {
   try {
-    const response = await api.delete(`/venues/${id}/`);
+    const token = await getToken();
+    const headers = {
+      headers: {
+        Authorization: token
+      },
+    };
+    const response = await api.delete(`/venues/${id}/`, headers);
     return response.data;
   } catch (error) {
     throw error;
