@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
-import { getVenue } from "../../services/venueApi";
+import { getVenue, deleteVenue } from "../../services/venueApi";
+import { deleteMachine } from '../../services/machineApi';
 import { Link, useParams } from "react-router-dom";
 import "./VenueDetail.css"
 
@@ -9,6 +10,8 @@ import "./VenueDetail.css"
 const VenueDetail = (props) => {
   const [venue, setVenue] = useState([]);
   const [isLoaded, setLoaded] = useState(false);
+
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -37,7 +40,7 @@ const VenueDetail = (props) => {
           </div>
           <div className="venue-btn-container">
             <Link className="venue-edit-link" to={`/venues/${id}/edit`}>edit</Link>
-            <button className="venue-delete-btn">delete</button>
+            <Link className="venue-delete-btn" to={`/`} onClick={() => deleteVenue(venue.id)}>delete</Link>
           </div>
         </div>
         <h1 className="machines-block">machines</h1>
@@ -50,7 +53,7 @@ const VenueDetail = (props) => {
                 <p className="machine-comments">{machine.comments}</p>
                 <div className="machine-btn-container">
                   <Link className="machine-edit-link" to={`/machines/${machine.id}/edit`}>edit</Link>
-                  <button className="machine-delete-btn">delete</button>
+                  <Link className="machine-delete-btn" to={`/`} onClick={() => deleteMachine(machine.id)}>delete</Link>
                 </div>
               </div>
             );

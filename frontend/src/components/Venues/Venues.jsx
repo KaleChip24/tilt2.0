@@ -20,7 +20,7 @@ const Venues = (props) => {
 
 
   return (
-    // <Layout >
+
     <div className="venues-container">
       <div className="venues">
         {venues.map((venue, index) => {
@@ -38,7 +38,6 @@ const Venues = (props) => {
       </div>
 
     </div>
-    // </Layout>
   );
 };
 
