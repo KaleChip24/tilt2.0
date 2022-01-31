@@ -1,0 +1,29 @@
+.foot-container {
+  display: flex;
+  background-color: black;
+  justify-content: space-around;
+  margin-top: 30px;
+  padding: 10px;
+  border-top: 1px solid black;
+  height: 30px;
+}
+
+.links {
+  display: flex;
+  font-size: 30px;
+  justify-content: space-around;
+  color: turquoise;
+}
+.linked-link{
+  margin-left: 115px;
+  justify-self: right;
+  color: turquoise;
+}
+
+.git-link{
+  color: turquoise;
+}
+
+.copyright-yr{
+  color: turquoise;
+}
