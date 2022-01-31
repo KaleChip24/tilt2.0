@@ -68,12 +68,136 @@ Tilt is a full CRUD app where users can add their faviorite pinball venues and t
 #### Models
 
 ```
-model code here
+
+class Venue(models.Model):
+    name = models.CharField(max_length=128)
+    address = models.CharField(max_length=256)
+    city = models.CharField(max_length=128)
+    state = models.CharField(max_length=128)
+
+    def __str__(self):
+        return self.name
+
+
+class Machine(models.Model):
+    name = models.CharField(max_length=258)
+    price = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    comments = models.CharField(max_length=256)
+    venue = models.ForeignKey(
+        Venue, on_delete=models.CASCADE, related_name='machines', null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
 
 ```
 
 <br>
 
+#### Endpoints
+
+**All Venues**
+```
+{
+        "id": 2,
+        "name": "Jupiter Bar",
+        "address": "2126 2nd Ave",
+        "city": "Seattle",
+        "state": "WA",
+        "machines": [
+            {
+                "id": 3,
+                "name": "Creature From the Black Lagoon",
+                "price": "0.75",
+                "comments": "Left flipper sticks from time to time",
+                "venue": 2
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Sunshine Laundromat",
+        "address": "860 Manhattan Ave",
+        "city": "Brooklyn",
+        "state": "NY",
+        "machines": [
+            {
+                "id": 2,
+                "name": "Jurassic Park (Pro)",
+                "price": "1.00",
+                "comments": "Brand NEW!!",
+                "venue": 3
+            },
+            {
+                "id": 14,
+                "name": "ACDA",
+                "price": "0.50",
+                "comments": "party like a rockstar",
+                "venue": 3
+            },
+            {
+                "id": 18,
+                "name": "Midevil Madness",
+                "price": "1.00",
+                "comments": "Left flipper sticks from time to time",
+                "venue": 3
+            }
+
+```
+
+**Venues by ID**
+```
+{
+    "id": 2,
+    "name": "Jupiter Bar",
+    "address": "2126 2nd Ave",
+    "city": "Seattle",
+    "state": "WA",
+    "machines": [
+        {
+            "id": 3,
+            "name": "Creature From the Black Lagoon",
+            "price": "0.75",
+            "comments": "Left flipper sticks from time to time",
+            "venue": 2
+        }
+    ]
+}
+```
+
+**All Machines**
+
+```
+
+    {
+        "id": 3,
+        "name": "Creature From the Black Lagoon",
+        "price": "0.75",
+        "comments": "Left flipper sticks from time to time",
+        "venue": 2
+    },
+    {
+        "id": 2,
+        "name": "Jurassic Park (Pro)",
+        "price": "1.00",
+        "comments": "Brand NEW!!",
+        "venue": 3
+    },
+    {
+        "id": 4,
+        "name": "Addams Family",
+        "price": "0.75",
+        "comments": "Thing's hand is out for repairs",
+        "venue": 4
+    },
+    {
+        "id": 8,
+        "name": "Batman",
+        "price": "1.00",
+        "comments": "da na na na",
+        "venue": 4
+    },
+```
 
 
 ### MVP

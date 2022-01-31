@@ -3,7 +3,7 @@ import api from "./apiConfig";
 
 export const signUp = async (credentials) => {
   try {
-    const resp = await api.post("/signUp/", credentials);
+    const resp = await api.post("user/signUp/", credentials);
     localStorage.setItem("token", resp.data.access);
     localStorage.setItem("refresh", resp.data.refresh)
     return resp;
