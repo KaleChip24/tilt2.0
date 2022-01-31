@@ -40,7 +40,6 @@ const VenueEdit = () => {
 
   return (
     <Layout>
-
       <div className="venue-form">
         <h2 className="edit-venue-header">Edit Venue</h2>
         <form className="edit-form" onSubmit={handleSubmit}>

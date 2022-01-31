@@ -1,4 +1,4 @@
-// import "./Layout.css";
+import "./Layout.css";
 import Nav from '../Nav/Nav';
 import Footer from "../Footer/Footer";
 

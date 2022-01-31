@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,200&display=swap');
+
+
+/* .landing-page{
+  display: flex;
+} */
+
+.intro{
+margin-top: 80px;
+width: 650px;
+font-family: 'Montserrat', sans-serif;
+}

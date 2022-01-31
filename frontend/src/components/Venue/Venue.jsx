@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import './Venue.css'
 
 const Venue = (props) => {
   return (

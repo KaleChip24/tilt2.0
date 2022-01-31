@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom"
 import { getMachine, updateMachine } from "../../services/machineApi"
 import { getVenues } from "../../services/venueApi"
 import './MachineEdit.css'
+import Layout from "../../components/Layout/Layout"
 
 const MachineEdit = () => {
   let navigate = useNavigate();
@@ -51,55 +52,56 @@ const MachineEdit = () => {
 
 
   return (
-    <div className="machine-form">
-      <h2 className="add-machine-header">Edit Machine</h2>
-      <form className="create-form" onSubmit={handleSubmit}>
-        <div className="form-inputs">
-          <input
-            className='input-name'
-            placeholder='Name'
-            value={machine.name}
-            name='name'
-            onChange={handleChange}
-          />
-          <input
-            className='input-price'
-            placeholder='price'
-            value={machine.price}
-            name='price'
-            onChange={handleChange}
-          />
-          <input
-            className='input-comments'
-            placeholder='comments'
-            value={machine.comments}
-            name='comments'
-            rows={10}
-            onChange={handleChange}
-          />
-          <select
-            name='venue'
-            value={venues.name}
-            onChange={handleChange}
-          // options={console.log([venues.name])}
-          >
-            <option>Venue</option>
-            {venues.map((venue, index) => {
-              return (
-                <option key={index} value={venue.id}>{venue.name}</option>
-              )
-            })}
-          </select>
-        </div>
-        <button
-          className="add-machine-btn"
-          type='submit'>Submit</button>
-        <Link to={`/`}>
-          <button id='back-redirect-button'>Back</button>
-        </Link>
-      </form>
-
-    </div>
+    <Layout>
+      <div className="machine-form">
+        <h2 className="add-machine-header">Edit Machine</h2>
+        <form className="create-form" onSubmit={handleSubmit}>
+          <div className="form-inputs">
+            <input
+              className='input-name'
+              placeholder='Name'
+              value={machine.name}
+              name='name'
+              onChange={handleChange}
+            />
+            <input
+              className='input-price'
+              placeholder='price'
+              value={machine.price}
+              name='price'
+              onChange={handleChange}
+            />
+            <input
+              className='input-comments'
+              placeholder='comments'
+              value={machine.comments}
+              name='comments'
+              rows={10}
+              onChange={handleChange}
+            />
+            <select
+              name='venue'
+              value={venues.name}
+              onChange={handleChange}
+            // options={console.log([venues.name])}
+            >
+              <option>Venue</option>
+              {venues.map((venue, index) => {
+                return (
+                  <option key={index} value={venue.id}>{venue.name}</option>
+                )
+              })}
+            </select>
+          </div>
+          <button
+            className="add-machine-btn"
+            type='submit'>Submit</button>
+          <Link to={`/`}>
+            <button id='back-redirect-button'>Back</button>
+          </Link>
+        </form>
+      </div>
+    </Layout>
   );
 };
 
