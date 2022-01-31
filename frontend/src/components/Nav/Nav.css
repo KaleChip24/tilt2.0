@@ -35,17 +35,23 @@ li{
   color: black;
   border-bottom: 1px solid turquoise;
 }
+.signOut{
+  text-decoration: none; 
+	padding: .2em 1em; 
+  color: black;
+  border-top: 1px solid turquoise;
+}
 
 .add-venue-link{
   text-decoration: none; 
 	padding: .2em 1em; 
   color: black;
-  border-bottom: 1px solid turquoise;
+  border-top: 1px solid turquoise;
 }
 
 .add-machine-link{
   text-decoration: none; 
 	padding: .2em 1em; 
   color: black;
-  border-top: 1px solid turquoise;
+  border-bottom: 1px solid turquoise;
 }

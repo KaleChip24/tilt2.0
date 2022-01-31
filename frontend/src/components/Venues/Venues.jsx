@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getVenues } from "../../services/venueApi"
 import Venue from "../Venue/Venue";
-// import Layout from "../Layout/Layout";
+import './Venues.css'
 
 
 

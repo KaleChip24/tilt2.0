@@ -1,11 +1,15 @@
 .foot-container {
   display: flex;
+  position: fixed; 
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: auto;
   background-color: black;
   justify-content: space-around;
   margin-top: 30px;
-  padding: 10px;
+  padding-top: 10px;
   border-top: 1px solid black;
-  height: 30px;
 }
 
 .links {
